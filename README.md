@@ -4,6 +4,7 @@ This is just a place where i store my modules and scripts as a backup, feel free
 
 ---
 CODE SAMPLE:
+---
 
   List_cleaner:
   ```c
@@ -20,4 +21,4 @@ CODE SAMPLE:
   ```c
   ['joao', 'ana', 'pedro', 'hope', 'ema']
   ```
-
+---
