@@ -1,10 +1,10 @@
 '''
-The listc function needs two lists to work, the first one is the list you wanna clean,
+The lc function needs two lists to work, the first one is the list you wanna clean,
 and the second is the characters you want to remove.
 '''
 cleaned_list = []
 
-def list_cleaner(my_list, remove):
+def lc(my_list, remove):
 
     for iten in my_list:
         has_symbol = False
