@@ -1,8 +1,9 @@
 # General
 
-Thsi is just a place where i store my modules and scripts as a backup, feel free to use then
+Thsi is just a place where i store my modules and scripts as a backup, feel free to use then.
 
-Code sample on how to use then:
+
+CODE SAMPLE:
 
   List_cleaner:
   ```c
