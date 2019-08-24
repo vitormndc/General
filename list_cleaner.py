@@ -1,6 +1,6 @@
 '''
 The lc function needs two lists to work, the first one is the list you wanna clean,
-and the second is the characters you want to remove.
+and the second is the characters you want to remove from elements in the first list.
 '''
 cleaned_list = []
 
