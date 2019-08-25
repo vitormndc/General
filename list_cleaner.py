@@ -7,7 +7,7 @@ cleaned_list = []
 def lc(my_list, remove):
 
     for iten in my_list:
-        has_symbol = False
+        iten = str(iten)
 
         for symbol in remove:
             symbol = str(symbol)
