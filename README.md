@@ -1,4 +1,4 @@
-############# General
+# General
 
 This is just a place where I store my modules and scripts as a backup, feel free to use then.
 
