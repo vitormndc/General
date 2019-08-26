@@ -22,7 +22,7 @@ def up_or_down(var):  # identifies if the stock has gone up or down
 
 
 def formatter(c_info):  # abbreviation of Company_information that comes in the response list.
-    c_str = f'{c_info[0]}' + ' ' * (70 - len(c_info[0])) + f'{c_info[1]}' + ' '*(15 - len(c_info[1])) + f'{c_info[2]}'\
+    c_str = f'{c_info[0]}' + ' ' * (50 - len(c_info[0])) + f'{c_info[1]}' + ' '*(15 - len(c_info[1])) + f'{c_info[2]}'\
                + ' ' * (20 - len(c_info[2])) + f'{c_info[3]}' + ' ' * (3 - len(c_info[3])) + f'{c_info[4]} %'
     return c_str
 
@@ -38,7 +38,7 @@ for i in stocks:
         price = my_html.xpath('//*[@id="qwidget_lastsale"]/text()')[0]
         variation = my_html.xpath('//*[@id="qwidget_netchange"]/text()')[0]
         variation_direction = my_html.xpath('//*[@id="qwidget_netchange"]')[0].items()
-        response.append([company_name[0:50], i[0:9], price, up_or_down(variation_direction), variation])
+        response.append([company_name[0:45], i[0:9], price, up_or_down(variation_direction), variation])
     except:
         failed_search.append(i)
 
