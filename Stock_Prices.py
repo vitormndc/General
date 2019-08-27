@@ -53,6 +53,7 @@ while True:
     stocks = stocks.split()
     stocks = list(dict.fromkeys(stocks))
 
+    print('\n\n\n')
     for i in tqdm(stocks):
         try:
             page = requests.get(my_url(i), headers=header)
@@ -63,21 +64,21 @@ while True:
             price = my_html.xpath('//*[@id="qwidget_lastsale"]/text()')[0]
             variation = my_html.xpath('//*[@id="qwidget_netchange"]/text()')[0]
             variation_direction = my_html.xpath('//*[@id="qwidget_netchange"]')[0].items()
-            response.append([company_name[0:45], i[0:9], price, up_or_down(variation_direction), variation])
+            response.append([company_name[0:45], i[0:9], price, up_or_down(variation_direction), variation + ' %'])
         except:
             failed_search.append(i)
 
-    if len(response) > 0:
+    if response:
 
         list_header = ['Company name', 'Symbol', 'Stock Price', 'Today fluctuation', '']
-        print('\n' * 5 + formatter(list_header).replace('%', '') + '\n(Max, 50 characters) \n')
+        print('\n' * 3 + formatter(list_header) + '\n(Max, 50 characters) \n')
 
         for i in response:
             print(formatter(i))
 
     if failed_search:
 
-        print(f"\n\n\nCouldn't find these companies: {str(failed_search)}\n")
+        print(f"\nCouldn't find these companies: {str(failed_search)}\n")
 
     goagain = str(input('\n\nWould you like to make another search? (y or n): \n'))
     if goagain is not 'y':
