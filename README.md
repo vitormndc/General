@@ -36,19 +36,22 @@ The output would be
   ````
   the output should look like this
   ````
-  100%|████████████████████████████████████████████████████████████████████████████████████| 5/5 [00:04<00:00,  1.11it/s]
-
-
-  Company name                                      Symbol         Stock Price         Today fluctuation 
-  (Max, 50 characters) 
-
-  Tesla, Inc.                                       TSLA           $214.05             ▲  2.65 %
-  Apple Inc.                                        AAPL           $206.77             ▲  4.126 %
-  Facebook, Inc. Class A                            FB             $180.49             ▲  2.74 %
-  ASA  Gold and Precious Metals Limited             ASA            $13.23              ▼  0.08 %
+100%|███████████████████████████████████████████████████████████████████████████████| 5/5 [00:05<00:00,  1.11s/it]
 
 
 
-  Couldn't find these companies: ['ANO']
+Company name                                           Symbol         Stock Price         Today fluctuation
+(Max, 50 characters)
+
+Tesla, Inc.                                            TSLA           $214.34             ▼  0.6561
+Apple Inc.                                             AAPL           $204.67             ▼  1.82
+Facebook, Inc.                                         FB             $182.31             ▲  1.95
+ASA  Gold and Precious Metals Limited                  ASA            $13.55              ▲  0.31
+
+Couldn't find these companies: ['ANO']
+
+
+
+Would you like to make another search? (y or n):
   ````
 ---
