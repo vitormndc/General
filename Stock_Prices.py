@@ -47,7 +47,6 @@ def formatter(c_info, spaces=None):  # c_info is the abbreviation of Company_inf
 
 
 while True:
-
     input_str = 'Which stocks would you like to search? (e.g., TSLA, AAPL, FB):\n'
     stocks = str(input(input_str)).upper().replace(',', ' ')
     stocks = stocks.split()
@@ -76,11 +75,15 @@ while True:
         for i in response:
             print(formatter(i))
 
+        response.clear()
+
     if failed_search:
 
         print(f"\nCouldn't find these companies: {str(failed_search)}\n")
+        failed_search.clear()
 
-    goagain = str(input('\n\nWould you like to make another search? (y or n): \n'))
-    if goagain is not 'y':
+    repeat = str(input('\n\nWould you like to make another search? (y or n): '))
+    print('\n\n')
+    if repeat is not 'y':
         break
 
