@@ -30,6 +30,8 @@ def formatter(c_info):  # abbreviation of Company_information that comes in the 
 
 stocks = str(input('Which stocks would you like to search? (e.g., TSLA, AAPL, FB):\n')).upper().replace(',', ' ').split()
 
+
+print("\n\n")
 for i in tqdm(stocks):
     try:
         page = requests.get(my_url(i), headers=header)
