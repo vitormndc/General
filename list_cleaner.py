@@ -6,18 +6,17 @@ cleaned_list = []
 
 def lc(my_list, remove):
 
-    for iten in my_list:
-        iten = str(iten)
+    for item in my_list:
+        item = str(item)
 
         for symbol in remove:
             symbol = str(symbol)
 
-            if symbol in iten:
-                iten = iten.replace(symbol, '')
+            if symbol in item:
+                item = item.replace(symbol, '')
             else:
                 pass
 
-        cleaned_list.append(iten)
+        cleaned_list.append(item)
 
     return cleaned_list
-
