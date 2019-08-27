@@ -36,6 +36,9 @@ The output would be
   ````
   the output should look like this
   ````
+  100%|████████████████████████████████████████████████████████████████████████████████████| 5/5 [00:04<00:00,  1.11it/s]
+
+
   Company name                                      Symbol         Stock Price         Today fluctuation 
   (Max, 50 characters) 
 
