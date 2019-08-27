@@ -43,10 +43,10 @@ The output would be
 Company name                                           Symbol         Stock Price         Today fluctuation
 (Max, 50 characters)
 
-Tesla, Inc.                                            TSLA           $214.34             ▼  0.6561
-Apple Inc.                                             AAPL           $204.67             ▼  1.82
-Facebook, Inc.                                         FB             $182.31             ▲  1.95
-ASA  Gold and Precious Metals Limited                  ASA            $13.55              ▲  0.31
+Tesla, Inc.                                            TSLA           $214.34             ▼  0.6561  %
+Apple Inc.                                             AAPL           $204.67             ▼  1.82  %
+Facebook, Inc.                                         FB             $182.31             ▲  1.95  %
+ASA  Gold and Precious Metals Limited                  ASA            $13.55              ▲  0.31  %
 
 Couldn't find these companies: ['ANO']
 
