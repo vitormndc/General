@@ -23,7 +23,7 @@ The output would be
   ```
 ---
   
-  __Stock_prices:__
+  __Stock_prices (WebScrapper):__
   
   Open in cmd the .py file
   ```
