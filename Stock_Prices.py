@@ -10,8 +10,6 @@ down = '▼'
 
 
 def string_cleaner(my_stg, remove):
-    # this function could be imported as a module that i made, it is here just to make easier if someone wants just
-    # this script
 
     for symbol in remove:
         symbol = str(symbol)
