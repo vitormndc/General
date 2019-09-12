@@ -59,13 +59,14 @@ def saver(save_name):
 
 while True:
     stocks = []
-    option = input('What would you like to do?\n1. Make a new search\n2. Use saved stocks in a new search\n').strip()
+    option = input('What would you like to do?\n1. Make a new search\n2. Use saved stock list in a new search\n' +
+                   'Response: ').strip()
 
     while option is not '1' and option is not '2':
         option = input("\nThis isn't a valid number, please input a valid number '1' or '2':")
 
     if option is '1':
-        input_str = '\nWhich stocks would you like to search? (e.g., TSLA, AAPL, FB):\n'
+        input_str = '\nWhich stocks would you like to search? (e.g., TSLA, AAPL, FB)\nResponse:'
         stocks = str(input(input_str)).upper().replace(',', ' ')
         stocks = stocks.split()
         stocks = list(dict.fromkeys(stocks))  # remove repeated names
@@ -76,12 +77,12 @@ while True:
                 data = json.load(json_file)
 
                 if data.keys():
-                    print('\n')
+                    print('\nSaved searches')
                     for key in data:
                         values = string_cleaner(str(data[key]), ["'", '[', ']'])
                         print(f'{key}: {values}')
 
-                    select_save = input('\nPlease type a save to load: ')
+                    select_save = input('\nPlease type a save to load \nResponse: ')
                     if select_save not in data.keys():
                         print('Save file does not exist')
                         continue
@@ -122,12 +123,12 @@ while True:
         print(f"\nCouldn't find these companies: {str(failed_search)}")
         failed_search.clear()
 
-    save = input('\nWould you like to save this search? (y or n): \n')
+    save = input('\nWould you like to save this search? (y or n) \nResponse: ')
     if save is 'y':
-        save_as = str(input('\nHow would you like to name the save?: \n'))
+        save_as = str(input('\nHow would you like to name the save?: \nResponse: '))
         saver(save_as)
 
-    repeat = str(input('\nWould you like to make another search? (y or n): \n'))
+    repeat = str(input('\nWould you like to make another search? (y or n) \nResponse:'))
     if repeat is not 'y':
         break
 
