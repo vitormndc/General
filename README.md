@@ -70,10 +70,11 @@ What would you like to do?
 2. Use saved stock list in a new search
 Response: 2
 
-Saved searches:
+Saved searches
 standart: TSLA, AAPL, FB, NDAQ, GOOGL
 
-Please type a save to load: standart
+Please type a save to load
+Response: standart
 
 
 
