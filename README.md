@@ -29,7 +29,7 @@ The output would be
   ```
   py stock_prices.py
   ```
-  Selec the option you want, if you chose to do a new search type in the abbreviation of the companies you want to search (they can be separated using spaces, commas or both)
+  Select the option you want, if you chose to do a new search type in the abbreviation of the companies you want to search (they can be separated using spaces, commas or both)
   ````
   What would you like to do?
 1. Make a new search
