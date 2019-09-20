@@ -22,7 +22,7 @@ def string_cleaner(my_stg, remove):
 
 
 def my_url(stock_name):
-    url = f'https://www.nasdaq.com/symbol/{stock_name}/real-time'
+    url = f'https://old.nasdaq.com/symbol/{stock_name}/real-time'
 
     return url
 
@@ -34,27 +34,34 @@ def up_or_down(html_string):  # identifies if the stock has gone up or down
         return down
 
 
-def formatter(c_info, spaces=None):      # This function format the information in evenly spaced columns
-    c_str = ''                           # c_info is the abbreviation of Company_information array that is given
-    if spaces is None:                   # spaces is the number of spaces between columns in the final print
-        spaces = [55, 15, 20, 3, 0]      # default values for columns spacing
+def formatter(c_info, spaces=None):
+    """
+    This function format the information in evenly spaced columns,
+    c_info is the abbreviation of Company_information array that is given,
+    spaces is the number of spaces between columns in the final print
+    """
+    c_str = ''
+    if spaces is None:
+        spaces = [55, 15, 20, 3, 0]   # default value for spaces
     for (j, k) in zip(c_info, spaces):
         c_str += str(j) + ' ' * (k - len(j))
     return c_str
 
 
 def saver(save_name):
-    stock_list = list(set(stocks) - set(failed_search))
+    stock_list = [x for x in stocks if x not in failed_search]
     try:
         with open('stock_saves.json', 'r+') as json_file:
             data = json.load(json_file)
             json_file.seek(0)
             data[save_name] = stock_list
             json.dump(data, json_file, indent=4)
-    except:
+    except FileNotFoundError:
         with open('stock_saves.json', 'w') as json_file:
             data = {save_name: stock_list}
             json.dump(data, json_file, indent=4)
+    except json.decoder.JSONDecodeError:
+        print('The file that saves searches is corrupted, please delete "stock_saves.json" and try again')
 
 
 while True:
@@ -89,7 +96,7 @@ while True:
                     else:
                         stocks = data[select_save]
 
-        except:
+        except FileNotFoundError:
             print('\nThere is no saves\n')
             continue
 
@@ -109,7 +116,7 @@ while True:
             variation = my_html.xpath('//*[@id="qwidget_netchange"]/text()')[0]
             variation_direction = my_html.xpath('//*[@id="qwidget_netchange"]')[0].items()
             response.append([company_name[0:45], stock[0:9], price, up_or_down(variation_direction), variation + ' %'])
-        except:
+        except IndexError:
             failed_search.append(stock)
 
     if response:
@@ -121,7 +128,6 @@ while True:
 
     if failed_search:
         print(f"\nCouldn't find these companies: {str(failed_search)}")
-        failed_search.clear()
 
     save = input('\nWould you like to save this search? (y or n) \nResponse: ')
     if save is 'y':
@@ -132,5 +138,6 @@ while True:
     if repeat is not 'y':
         break
 
+    failed_search.clear()
     response.clear()
     print('\n' * 50)
