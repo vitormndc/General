@@ -1,6 +1,5 @@
-cleaned_list = []
-
 def lc(my_list, remove):
+    cleaned_list = []
 
     for item in my_list:
         item = str(item)
