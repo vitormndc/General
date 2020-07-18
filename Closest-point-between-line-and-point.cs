@@ -26,7 +26,6 @@ public class DrawLine : MonoBehaviour
         GenerateLine();
         DistPointLine();
 
-        //distance = (pos1 - pos2).magnitude;
     }
 
     public void GenerateLine()
@@ -63,13 +62,6 @@ public class DrawLine : MonoBehaviour
 
     public void DistPointLine()
     {
-        var previousRedSpheres = GameObject.FindGameObjectsWithTag("redSphere");
-        foreach (var i in previousRedSpheres)
-        {
-                Destroy(i);
-        }
-
-
 
         float cubeX = cube.transform.position.x;
         float cubeY = cube.transform.position.y;
@@ -112,8 +104,7 @@ public class DrawLine : MonoBehaviour
             closestPointY = cubeY + deltaXCubeToLine * slopePerpendicular;
         }
 
-
-        Instantiate(redsphere, new Vector3(closestPointX, closestPointY, 0), transform.rotation);
+        redsphere.transform.position = new Vector3(closestPointX, closestPointY, 0);
 
     }
 
