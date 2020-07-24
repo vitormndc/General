@@ -15,7 +15,7 @@ if len(directory) == 0:
 def find_ep_from_filename(filename):
     counter = 1
 
-    while counter < eps_count:
+    while counter <= eps_count:
 
         if len(str(counter)) == 1:
             uppercase_search_for = f"E0{counter}"
