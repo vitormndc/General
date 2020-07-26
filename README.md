@@ -2,8 +2,6 @@
 
 This is just a place where I store my modules and scripts as a backup, feel free to use then.
 
-I suggest using debug mode and going step by step on the algorithms scripts to see ther individual behaviour.
-
 ---
 CODE SAMPLES:
 ---
